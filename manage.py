@@ -1,14 +1,14 @@
 import os
 
+from flask_script import Manager, Shell
+
+from todo_guru import create_app, db
+
 COV = None
 if os.environ.get('FLASK_COVERAGE'):
     import coverage
     COV = coverage.coverage(branch=True, include='todo_guru/*')
     COV.start()
-
-from flask_script import Manager, Shell
-
-from todo_guru import create_app, db
 
 app = create_app(os.getenv('FLASK_CONFIG') or 'default')
 manager = Manager(app)
