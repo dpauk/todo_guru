@@ -12,6 +12,7 @@ venv/
 
 # Unit test and coverage reports
 .coverage
+tmp/
 
 # databases
 *.sqlite
