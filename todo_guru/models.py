@@ -38,4 +38,3 @@ class Tag(db.Model):
     todo_id = db.Column(db.Integer, db.ForeignKey('todos.id'))
     parent_id = db.Column(db.Integer, index=True)
     created_on = db.Column(db.DateTime, default=datetime.utcnow)
-

@@ -34,4 +34,3 @@ class TodoModelTestCase(unittest.TestCase):
         todo = Todo()
         db.session.add(todo)
         self.assertRaises(IntegrityError, db.session.commit)
-
