@@ -12,6 +12,7 @@ class Todo(db.Model):
     parent_id = db.Column(db.Integer, index=True)
     categories = db.relationship('Category', backref='todo', lazy='dynamic')
     tags = db.relationship('Tag', backref='todo', lazy='dynamic')
+    due_on = db.Column(db.DateTime())
     created_on = db.Column(db.DateTime(), default=datetime.utcnow)
     updated_on = db.Column(db.DateTime(), default=datetime.utcnow,
                            onupdate=datetime.utcnow)
