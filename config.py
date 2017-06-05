@@ -5,7 +5,8 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 
 class Config:
     """Contains the configuration data"""
-    SECRET_KEY = os.environ.get('SECRET_KEY')
+    SECRET_KEY = os.environ.get('SECRET_KEY') or 'test_secret_key'
+    SQLALCHEMY_COMMIT_ON_TEARDOWN = True
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
     @staticmethod
